@@ -1,22 +1,7 @@
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
-
-const PokemonCard = () => {
-  // Je prends le premier Pokémon de la liste
-  const pokemon = pokemonList[1];
-
+function PokemonCard({ pokemon }) {
   return (
     <figure>
-      {/* Si pokemon.imgSrc existe, j'affiche une image. Sinon, j'affiche ??? */}
-      {pokemon.imgSrc ? (
+      {pokemon.imgSrc != null ? (
         <img src={pokemon.imgSrc} alt={pokemon.name} />
       ) : (
         <p>???</p>
@@ -24,6 +9,5 @@ const PokemonCard = () => {
       <figcaption>{pokemon.name}</figcaption>
     </figure>
   );
-};
-
+}
 export default PokemonCard;
